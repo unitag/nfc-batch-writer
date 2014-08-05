@@ -1,23 +1,17 @@
 NFC Batch Writer
 
-The NFC Batch Writer is a tool which allows users to encode a batch of NFC Tags from a single file
-containing all the records to be written. It reads the data contained in the file to generate the
-NDEF messages to be encoded and wait for the user to put the tag to be encoded on the reader device.
+The NFC Batch Writer is a tool which allows users to encode a batch of NFC Tags from a single file containing all the records to be written. It reads the data contained in the file to generate the NDEF messages to be encoded and wait for the user to put the tag to be encoded on the reader device.
 
-This tool is at the moment specific to ACR122 USB NFC desktop reader devices and will only encode
-Mifare Ultralight/C (Type 2) NFC tags, however the code should be adaptable to other devices and tags.
+This tool is at the moment specific to ACR122 USB NFC desktop reader devices and will only encode Mifare Ultralight/C (Type 2) NFC tags, however the code should be adaptable to other devices and tags.
 
-The program uses some functions provided in the NFC-Tools libraries, which can be found here on GitHub :
-https://github.com/grundid/nfctools
+The program uses some functions provided in the NFC-Tools libraries, which can be found here on GitHub : https://github.com/grundid/nfctools
 
-In order to run the tool, you will need the pcscd library installes on the computer.
+In order to run the tool, you will need the pcscd library installes on the computer. On Linux, you can run the following command on a terminal to get it : "sudo apt-get install pcscd"
+The tool can then be launched using the command java "-jar nfc-batch-writer.jar <file>".
 
 
-The file format used for the input file is a CSV file using semilocon as separator. The very first line shall
-only contain a boolean indicating whether the encoded tags should be made Read-Only. The following lines
-correspond to the different entries to be written on the tags, with one line per tag.
-A line shall be composed of one or more records separated by semilocons, and each record shall include the
-record type and its parameters separated by semilocons.
+The file format used for the input file is a CSV file using semilocon as separator. The very first line shall only contain a boolean indicating whether the encoded tags should be made Read-Only. The following lines correspond to the different entries to be written on the tags, with one line per tag.
+A line shall be composed of one or more records separated by semilocons, and each record shall include the record type and its parameters separated by semilocons.
 
 The different types available are text, uri, aar (Android Application Record), bookmark, sms, mail, tel, geo.
 For each of those types, the parameters to be input are :
