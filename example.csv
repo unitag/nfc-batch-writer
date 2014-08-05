@@ -1,0 +1,11 @@
+false
+text;This is a text record
+uri;http://www.unitag.io
+aar;com.unitag.scanner
+bookmark;Google;http://www.google.fr
+sms;SMS;0123456789;Message
+mail;EMail;email@adress.com;EMail title;This is an EMail message
+tel;Call;0123456789
+geo;Geoposition;0123;4560
+text;This is a record;text;And this another one
+text;Combining different records;uri;http://www.unitag.io
